@@ -1,0 +1,158 @@
+html, 
+body {
+    height: 0vh;
+    background-image: url(/image/space-1920x1080-8k-wallpaper-lava-4k-5k-live-wallpaper-android-12769.jpg);
+}
+#warp{
+    width:150px;
+    height:230px;
+    margin:400px auto;
+}
+#clock{
+    width:200px;
+    height:200px;
+    border-radius:80px;
+    border:10px solid rgba(238, 241, 243, 0.164);
+    background:rgb(31, 28, 28);
+    position:fixed;
+}
+#number {
+  counter-reset: section;
+  
+  div{
+    width:190px;
+    height:20px;
+    position:absolute;
+    left:10px;
+    top:90px;
+    counter-increment: section;
+  
+    &:before {
+      content: counter(section);
+      display:block;
+      width:20px;
+      height:20px;
+    }
+}
+    @for $i from 1 through 12 {
+      div:nth-child(#{$i}){
+        transform: rotate($i * 30deg + 90deg);
+      
+        &:before {
+          transform: rotate($i * (-30deg) - 90deg);
+        }
+      }
+    }
+}
+
+.pointer{
+    position:absolute;
+    bottom:90px;
+    transform-origin:50% 90%;
+}
+#houre{
+    width:9px;
+    height:56px;
+    left:100px;
+    background:rgb(96, 207, 165);
+    border-radius: 15px;
+}
+#minute{
+    width:9px;
+    height:72px;
+    left:100px;
+    bottom:92px;
+    background:rgb(224, 228, 22);
+    border-radius: 15px;
+}
+#second{
+    width:2px;
+    height:80px;
+    left:103px;
+    top: 30px;
+    background:rgb(255, 8, 0);
+    border-radius: 15px;
+}
+
+#centre {
+  position: relative;
+  height:17px;
+  width:17px;
+  background: rgb(0, 0, 0);
+  border-radius: 100%;
+  left:96px;
+  top:-98px;
+}
+
+#three {
+  position:relative;
+  left:175px;
+  top:75px;
+  font-family:Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+  font-weight:lighter;
+  font-size:40px;
+  color: rgb(19, 197, 188);
+}
+
+#six {
+  position:relative;
+  left:93px;
+  top:105px;
+  font-family:Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+  font-weight:lighter;
+  font-size:40px;
+  color: rgb(19, 197, 188);
+}
+
+#nine {
+  position:relative;
+  left:5px;
+  top:-20px;
+  font-family:Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+  font-weight:lighter;
+  font-size:40px;
+  color: rgb(19, 197, 188);
+}
+
+#twelve {
+  position:relative;
+  left:85px;
+  top:-145px;
+  font-family:Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+  font-weight:lighter;
+  font-size:40px;
+  color: rgb(19, 197, 188);
+}
+
+.area {
+  font-size: 6.5em;
+  color: #fff;
+  letter-spacing: -7px;
+  font-weight: 700;
+  text-transform: uppercase;
+  animation: blur .95s ease-out infinite;
+  text-shadow: 0px 0px 5px #fff, 0px 0px 7px #fff;
+}
+
+@keyframes blur {
+  from {
+    text-shadow:2px 2px 2px rgb(152, 218, 201),
+      0px 0px 10px rgb(152, 218, 201), 
+      0px 0px 25px rgb(152, 218, 201),
+      0px 0px 25px rgb(152, 218, 201),
+      0px 0px 25px rgb(152, 218, 201),
+      0px 0px 25px rgb(152, 218, 201),
+      0px 0px 25px rgb(152, 218, 201),
+      0px 0px 25px rgb(152, 218, 201),
+      0px 0px 50px rgb(152, 218, 201),
+      0px 0px 50px rgb(152, 218, 201),
+      0px 0px 50px #7B96B8,
+      0px 0px 150px #7B96B8,
+      0px 10px 100px #7B96B8,
+      0px 10px 100px #7B96B8,
+      0px 10px 100px #7B96B8,
+      0px 10px 100px #7B96B8,
+      0px -10px 100px #7B96B8,
+      0px -10px 100px #7B96B8;
+  }
+}
